@@ -1,5 +1,6 @@
 # django libraries
 from django.http import JsonResponse
+from .models import Links
 
 # python telegram bot libraries
 import telegram
