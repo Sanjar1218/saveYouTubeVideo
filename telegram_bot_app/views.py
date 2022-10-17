@@ -5,6 +5,7 @@ from django.http import JsonResponse
 import telegram
 
 TOKEN = '5128554563:AAGXrWFZ8YKt0lSbFpr6X1xo4P14X-L5NjE'
+# url to be called when new message arrive in bot
 url = 'site to be run'
 
 def setWeebHook(request):
@@ -14,6 +15,8 @@ def setWeebHook(request):
     bot = telegram.Bot(token=TOKEN)
     bot.setWebhook(url)
     return JsonResponse({'status':bot.getWebhookInfo()})
+
+# telegram bot functions here
 
 def home(request):
     #telegram bot handlers here
