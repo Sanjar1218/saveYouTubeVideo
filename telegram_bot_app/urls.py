@@ -1,8 +1,8 @@
 from django.urls import path
-from django.views.decorators.csrf import csrf_exempt
+# from django.views.decorators.csrf import csrf_exempt
 from . import views
 
 urlpatterns = [
-    path('', csrf_exempt(views.home)),
-    path('set', views.setWeebHook),
+    path('', views.home),
+    path('set/', views.setWebHook),
 ]
