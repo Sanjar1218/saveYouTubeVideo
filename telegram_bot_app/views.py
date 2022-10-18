@@ -20,7 +20,7 @@ TOKEN = '5128554563:AAGXrWFZ8YKt0lSbFpr6X1xo4P14X-L5NjE'
 # url to be called when new message arrive in bot
 url = 'http://127.0.0.1:8000/'
 
-bot = telegram.Bot(token=TOKEN, base_url='http://127.0.0.1:8081/bot')
+bot = telegram.Bot(token=TOKEN, base_url='https://savingmyvideo.herokuapp.com/bot')
 
 def setWebHook(request):
     # for more information about webhook head over to this site
@@ -39,7 +39,7 @@ TOKEN = '5128554563:AAGXrWFZ8YKt0lSbFpr6X1xo4P14X-L5NjE'
 def home(request):
     # to logout bot from official site 
     # need to be runs ones befor using it
-    # updater.bot.log_out()
+    # bot.log_out()
 
     # gets data from request that bot sended
     data = json.loads(request.body.decode())
