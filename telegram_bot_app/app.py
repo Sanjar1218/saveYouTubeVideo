@@ -1,11 +1,5 @@
-from telegram.ext import (
-    Updater, 
-    MessageHandler, 
-    CommandHandler,
-    CallbackQueryHandler,
-    Filters,
-    CallbackContext,
-)
+from telegram.ext import CallbackContext
+
 from telegram import (
     Update, 
     InlineKeyboardButton, 
