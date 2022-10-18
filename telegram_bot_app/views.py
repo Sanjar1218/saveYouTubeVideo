@@ -18,7 +18,7 @@ import json
 
 TOKEN = '5128554563:AAGXrWFZ8YKt0lSbFpr6X1xo4P14X-L5NjE'
 # url to be called when new message arrive in bot
-url = 'http://127.0.0.1:8000/'
+url = 'https://savingbot.pythonanywhere.com/'
 
 bot = telegram.Bot(token=TOKEN, base_url='https://savingmyvideo.herokuapp.com/bot')
 
