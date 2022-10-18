@@ -29,7 +29,7 @@ def setWebHook(request):
     
     # print(bot.getWebhookInfo())
     # this changes bots request url to url
-    return JsonResponse({'status':bot.setWebhook(url)})
+    return JsonResponse({'status':'ok'})
 
 # telegram bot functions here
 TOKEN = '5128554563:AAGXrWFZ8YKt0lSbFpr6X1xo4P14X-L5NjE'
