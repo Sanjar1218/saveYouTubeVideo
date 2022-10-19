@@ -43,10 +43,10 @@ def home(request):
 
     # gets data from request that bot sended
     if request.method =='POST':
-        data = json.loads(request.body.decode())
+        # data = json.loads(request.body.decode())
         # handlers here
         # changing raw data to telegram object
-        update = Update.de_json(data, bot)
+        # update = Update.de_json(data, bot)
 
         #telegram bot handlers here
         dp = Dispatcher(bot, None)
@@ -55,7 +55,7 @@ def home(request):
         dp.add_handler(CallbackQueryHandler(url_inline_button))
 
         # this runs ones a time
-        dp.process_update(update)
-        return JsonResponse({'status':'ok'})
+        # dp.process_update(update)
+        return JsonResponse({'status': request.body})
     
     return JsonResponse({'status':'get'})
