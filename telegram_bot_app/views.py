@@ -42,17 +42,20 @@ def home(request):
     # bot.log_out()
 
     # gets data from request that bot sended
-    data = json.loads(request.body.decode())
-    # handlers here
-    # changing raw data to telegram object
-    update = Update.de_json(data, bot)
+    if request.method =='POST':
+        data = json.loads(request.body.decode())
+        # handlers here
+        # changing raw data to telegram object
+        update = Update.de_json(data, bot)
 
-    #telegram bot handlers here
-    dp = Dispatcher(bot, None)
-    dp.add_handler(CommandHandler('start', start))
-    dp.add_handler(MessageHandler(Filters.entity('url'), named))
-    dp.add_handler(CallbackQueryHandler(url_inline_button))
+        #telegram bot handlers here
+        dp = Dispatcher(bot, None)
+        dp.add_handler(CommandHandler('start', start))
+        dp.add_handler(MessageHandler(Filters.entity('url'), named))
+        dp.add_handler(CallbackQueryHandler(url_inline_button))
 
-    # this runs ones a time
-    dp.process_update(update)
-    return JsonResponse({'status':'ok'})
+        # this runs ones a time
+        dp.process_update(update)
+        return JsonResponse({'status':'ok'})
+    
+    return JsonResponse({'status':'get'})
