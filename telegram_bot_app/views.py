@@ -52,7 +52,7 @@ def home(request):
         update = Update.de_json(data, bot)
         print('dispatcher')
         #telegram bot handlers here
-        dp = Dispatcher(bot, None)
+        dp = Dispatcher(bot, None, workers=2)
         dp.add_handler(CommandHandler('start', start))
         dp.add_handler(MessageHandler(Filters.entity('url'), named))
         dp.add_handler(CallbackQueryHandler(url_inline_button))
