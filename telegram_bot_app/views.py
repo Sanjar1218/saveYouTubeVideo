@@ -43,12 +43,12 @@ def home(request):
     print('requesting')
     # gets data from request that bot sended
     if request.method =='POST':
-        # print(request.body)
+        print(request.body)
         data = json.loads(request.body.decode())
         # handlers here
         # changing raw data to telegram object
         update = Update.de_json(data, bot)
-
+        print('dispatcher')
         #telegram bot handlers here
         dp = Dispatcher(bot, None)
         dp.add_handler(CommandHandler('start', start))
@@ -57,6 +57,7 @@ def home(request):
 
         # this runs ones a time
         dp.process_update(update)
+        print('update')
         return JsonResponse({'status': 'ok'})
     
     return JsonResponse({'status':'get'})
