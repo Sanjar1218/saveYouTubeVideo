@@ -41,8 +41,10 @@ def home(request):
     # need to be runs ones befor using it
     # bot.log_out()
     print('requesting')
+    print('request')
     # gets data from request that bot sended
     if request.method =='POST':
+        print(request.GET)
         print(request.body)
         data = json.loads(request.body.decode())
         # handlers here
