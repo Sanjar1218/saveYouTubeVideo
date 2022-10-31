@@ -40,7 +40,7 @@ def home(request):
     # to logout bot from official site 
     # need to be runs ones befor using it
     # bot.log_out()
-    # print('requesting')
+    print('requesting')
     # gets data from request that bot sended
     if request.method =='POST':
         # print(request.body)
@@ -56,7 +56,7 @@ def home(request):
         dp.add_handler(CallbackQueryHandler(url_inline_button))
 
         # this runs ones a time
-        # dp.process_update(update)
+        dp.process_update(update)
         return JsonResponse({'status': 'ok'})
     
     return JsonResponse({'status':'get'})
