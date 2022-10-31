@@ -40,7 +40,7 @@ def home(request):
     # to logout bot from official site 
     # need to be runs ones befor using it
     # bot.log_out()
-
+    print('requesting')
     # gets data from request that bot sended
     if request.method =='POST':
         print(request.body)
