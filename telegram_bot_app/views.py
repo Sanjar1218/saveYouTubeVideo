@@ -40,14 +40,14 @@ def home(request):
     # to logout bot from official site 
     # need to be runs ones befor using it
     # bot.log_out()
-    print('requesting')
+    # print('requesting')
     # gets data from request that bot sended
     if request.method =='POST':
-        print(request.body)
-        # data = json.loads(request.body.decode())
+        # print(request.body)
+        data = json.loads(request.body.decode())
         # handlers here
         # changing raw data to telegram object
-        # update = Update.de_json(data, bot)
+        update = Update.de_json(data, bot)
 
         #telegram bot handlers here
         dp = Dispatcher(bot, None)
