@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-sc3w2!!&o^v74%z4tm=w4g&8fcw7r1^_k=u4^ssjh+htm!#*+g
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'savingbot.pythonanywhere.com'
+    '*',
 ]
 
 
