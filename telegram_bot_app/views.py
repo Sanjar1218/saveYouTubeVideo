@@ -20,7 +20,7 @@ TOKEN = '5128554563:AAGXrWFZ8YKt0lSbFpr6X1xo4P14X-L5NjE'
 # url to be called when new message arrive in bot
 url = 'https://savingbot.pythonanywhere.com/'
 
-bot = telegram.Bot(token=TOKEN, base_url='http://127.0.0.1:8081/bot')
+bot = telegram.Bot(token=TOKEN, base_url='https://savingvideo.herokuapp.com/bot')
 
 def setWebHook(request):
     # for more information about webhook head over to this site
