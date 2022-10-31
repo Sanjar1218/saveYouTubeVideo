@@ -44,7 +44,7 @@ def home(request):
     print('request')
     # gets data from request that bot sended
     if request.method =='POST':
-        print(request.GET)
+        print(request.get_full_path())
         print(request.body)
         data = json.loads(request.body.decode())
         # handlers here
